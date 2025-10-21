@@ -22,11 +22,9 @@ int main () {
 
         if(num > 207){
             cout << "The subway doesn't reach that far!" <<endl;
-        }
-        else if (num <= 207 && num > 190) {
-        cout << "You're in Inwood - the very top of Manhattan!" << endl;
-        }
-        else if (num <= 190 && num > 181) {
+        } else if (num <= 207 && num > 190) {
+            cout << "You're in Inwood - the very top of Manhattan!" << endl;
+        } else if (num <= 190 && num > 181) {
             cout << "You're in Upper Manhattan" << endl;
         } else if (num <= 181 && num > 168) {
             cout << "Welcome to Washington Heights!" << endl;
