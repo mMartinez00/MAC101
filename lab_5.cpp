@@ -2,18 +2,23 @@
 using namespace std;
 
 int main () {
-    int input;
+    int riders;
+    double total = 0;
 
-    cout << "Enter a number to print pattern: ";
-    cin >> input;
+    cout << "Enter the number of riders: ";
+    cin >> riders;
 
-    for( int j = 1; j <= input; j++) {
-        for( int i = 1; i <= j; i++) {
-            cout << "*" << " ";
+    for(int swipe = 1; swipe <= riders; swipe++) {
+        if(swipe % 3 == 0) {
+            total = total + 0;
+        } else if (swipe % 5 == 0) {
+            total = total + 1.45;
+        } else {
+            total = total + 2.90;
         }
-        
-        cout << endl;
     }
+
+    cout << total;
 
     return 0;
 } 
