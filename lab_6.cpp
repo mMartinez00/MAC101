@@ -3,12 +3,12 @@
 #include <string>
 using namespace std;
 
-void inputData(string& name, string& grade, string students[], int& array_size) {
+void inputData(string& name, string& grade, string students[], int array_size) {
 
     for(int i = 0; i < array_size; i++) {
         cout << "Input student name: ";
         getline(cin, name);
-        cout << "Input " + name + " grade: ";
+        cout << "Input " << name << " grade: ";
         getline(cin, grade);
 
         students[i] = "Name: " + name + " " +  "Grade: " + grade;
@@ -38,6 +38,8 @@ int main () {
     for(int i = 0; i < array_size; i++) {
         outputFile << students[i] << endl;
     }
+
+    cout << "Data stored successfully.";
 
     outputFile.close();
 
