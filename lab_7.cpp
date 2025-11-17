@@ -2,42 +2,41 @@
 #include <string>
 using namespace std;
 
-int fahToCel(int temp) {
-    const double cel = 5/9*(temp - 32);
-
-    return cel;
+double fahToCel(double temp) {
+    return (5.0 / 9.0) * (temp - 32.0);
 }
 
-int celToFah(int temp) {
-    const double fah = (temp * 9/5) + 32;
-
-    return fah;
+double celToFah(double temp) {
+    return (temp * 9.0 / 5.0) + 32.0;
 }
 
 int main () {
     string input;
-    string subStrngCel = "C";
-    string subStrngFah = "F";
 
     cout << "Input temperature: ";
 
     cin >> input;
 
-    bool isCel = input.find(subStrngCel) != string::npos;
+    char unit = input.back(); // Last character
+    unit = toupper(unit); // Convert it uppercase
 
-    int result;
+    string numberPart = input.substr(0, input.size() - 1); // All but last character
+    double temp = stod(numberPart); // Convert string -> double
 
-    if(isCel) {
-        double temp = stoi(input);
+    double result;
+    char outputUnit;
 
-        result = fahToCel(temp);
-    } else {
-        double temp = stoi(input);
-
-        result = celToFah(temp);
+    if(unit == 'C') {
+        result = celToFah(temp); // F -> C
+        outputUnit = 'F';
+    } else if (unit == 'F') {
+        result = fahToCel(temp); // C -> F
+        outputUnit = 'C';
     }
 
-    cout << result;
+    cout << result << outputUnit;
+
+   
 
     return 0;
 }
